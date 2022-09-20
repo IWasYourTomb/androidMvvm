@@ -25,7 +25,7 @@ class MovieAdapter : RecyclerView.Adapter<MainViewHolder>() {
 
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
         val movie = movieList[position]
-        if(ValidationUtil.validateMovie(movie)){
+        if (ValidationUtil.validateMovie(movie)) {
             holder.binding.name.text = movie.name
             Glide.with(holder.itemView.context).load(movie.imageUrl).into(holder.binding.imageview)
         }
@@ -36,4 +36,4 @@ class MovieAdapter : RecyclerView.Adapter<MainViewHolder>() {
     }
 }
 
-class  MainViewHolder(val binding: AdapterBinding) : RecyclerView.ViewHolder(binding.root){}
+class MainViewHolder(val binding: AdapterBinding) : RecyclerView.ViewHolder(binding.root) {}

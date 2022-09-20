@@ -8,12 +8,12 @@ import retrofit2.http.GET
 
 interface RetrofitService {
     @GET("movielist.json")
-    suspend fun getAllMovies() : Response<List<Movie>>
+    suspend fun getAllMovies(): Response<List<Movie>>
 
-    companion object{
+    companion object {
         var retrofitService: RetrofitService? = null
-        fun getInstance() : RetrofitService{
-            if(retrofitService == null){
+        fun getInstance(): RetrofitService {
+            if (retrofitService == null) {
                 val client = Retrofit.Builder()
                     .baseUrl("https://howtodoandroid.com/")
                     .addConverterFactory(GsonConverterFactory.create())

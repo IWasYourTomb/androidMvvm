@@ -6,7 +6,7 @@ import com.example.apirequest.network.NetworkState
 
 class MainRepository constructor(private val retrofitService: RetrofitService) {
 
-    suspend fun getAllMovies() : NetworkState<List<Movie>> {
+    suspend fun getAllMovies(): NetworkState<List<Movie>> {
         val response = retrofitService.getAllMovies()
         return if (response.isSuccessful) {
             val responseBody = response.body()
